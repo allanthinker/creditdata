@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration status="WARN">
+  <properties>
+    <property name="LOG_HOME">C:/eclipse/workspace/statfilemgr/log</property>
+    <property name="FILE_NAME">creditapp</property>
+  </properties>
+  
+  <Appenders>
+    <Console name="Console" target="SYSTEM_OUT">
+      <PatternLayout pattern="%d{yyyy-MM-dd HH:mm:ss.SSS} [%t] %-5level - %msg (%F:%M:%L)%n" />
+    </Console>
+    
+    <RollingRandomAccessFile name="FileLog" fileName="${LOG_HOME}/${FILE_NAME}.log"
+                             filePattern="${LOG_HOME}/$${date:yyyy-MM}/${FILE_NAME}-%d{yyyy-MM-dd}-%i.log">
+                             
+      <PatternLayout pattern="%d{yyyy-MM-dd HH:mm:ss.SSS} [%t] %-5level - %msg (%F:%M:%L)%n" />
+    
+      <Policies>
+        <TimeBasedTriggeringPolicy interval="7" />
+        <SizeBasedTriggeringPolicy size="50 MB" />
+      </Policies>
+    
+      <DefaultRolloverStrategy max="30" />
+    </RollingRandomAccessFile>
+  </Appenders>
+  
+  <Loggers>
+    <!--Logger name="applogfile" level="info" additivity="true">
+      <AppenderRef ref="FileLog" />
+    </Logger-->
+  
+    <Root level="info">
+      <AppenderRef ref="Console" />
+      <AppenderRef ref="FileLog" />
+    </Root>
+  </Loggers>
+</Configuration>
