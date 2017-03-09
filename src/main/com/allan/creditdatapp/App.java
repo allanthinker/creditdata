@@ -9,7 +9,7 @@ import org.apache.logging.log4j.Logger;
 
 import com.allan.creditdatapp.monitor.FileMonitor;
 
-/*
+/**
  * CreditData Application
  */
 public class App {
@@ -54,6 +54,11 @@ public class App {
         LOGGER.info("App configuration initialized ...");
     }
 
+    /**
+     * 初始化文件监控任务
+     * 
+     * @throws Exception
+     */
     private static void INIT_MAIN_PROCESS() throws Exception {
         FileMonitor monitor = new FileMonitor(FILE_PATH_UPLOAD, MONITOR_INTERVAL);
         monitor.start();
