@@ -9,6 +9,9 @@ import org.apache.logging.log4j.Logger;
 
 import com.allan.creditdatapp.monitor.FileMonitor;
 
+/*
+ * CreditData Application
+ */
 public class App {
 
     private static final Logger LOGGER = LogManager.getLogger(LogManager.getLogger(App.class.getName()));
