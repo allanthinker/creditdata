@@ -17,6 +17,9 @@ import com.allan.creditdatapp.parser.ENTJudicialDecisionParser;
 import com.allan.creditdatapp.parser.ENTQualificationParser;
 import com.allan.creditdatapp.parser.ENTSeriousViolationOfLawParser;
 
+/*
+ * 
+ */
 public class AppUtil {
     
     public static void initCommonENTBaseInfo(Row row, ENTBaseInfo entBaseInfo)
