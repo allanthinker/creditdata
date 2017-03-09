@@ -29,6 +29,11 @@ public class App {
     public static File DIR_BACKUP;
     public static File DIR_INVALID;
 
+    /**
+     * 读取配置文件信息
+     * 
+     * @throws Exception
+     */
     public static void INIT_CONF() throws Exception {
         Configurations configs = new Configurations();
         Configuration config = configs.properties(new File("/config.properties"));
