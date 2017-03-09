@@ -9,6 +9,9 @@ import org.apache.logging.log4j.Logger;
 
 import com.allan.creditdatapp.monitor.FileMonitor;
 
+/**
+ * CreditData Application
+ */
 public class App {
 
     private static final Logger LOGGER = LogManager.getLogger(LogManager.getLogger(App.class.getName()));
@@ -26,6 +29,11 @@ public class App {
     public static File DIR_BACKUP;
     public static File DIR_INVALID;
 
+    /**
+     * 读取配置文件信息
+     * 
+     * @throws Exception
+     */
     public static void INIT_CONF() throws Exception {
         Configurations configs = new Configurations();
         Configuration config = configs.properties(new File("/config.properties"));
@@ -46,6 +54,11 @@ public class App {
         LOGGER.info("App configuration initialized ...");
     }
 
+    /**
+     * 初始化文件监控任务
+     * 
+     * @throws Exception
+     */
     private static void INIT_MAIN_PROCESS() throws Exception {
         FileMonitor monitor = new FileMonitor(FILE_PATH_UPLOAD, MONITOR_INTERVAL);
         monitor.start();
